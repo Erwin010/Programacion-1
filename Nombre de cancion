@@ -1,0 +1,15 @@
+// Nombre de cancion.cpp : Defines the entry point for the console application.
+//Fecha: 04/08/2015
+//Alumno: Erwin Ferreyra Montaño
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	cout<<"Sad But True - Metallica \n\n";
+	getch();
+}
