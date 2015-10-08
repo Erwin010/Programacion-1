@@ -1,0 +1,21 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+int main()
+{ int n, c, a=1, b=1, i;
+	cout<<"Ingrese la cantidad de digitos que quiere la secuencia:";
+	cin>>n;
+	cout<<a<<endl;
+	n=n-1;
+	for (i=1;i<=n;i++)
+	{	cout<<b<<endl;
+		c=a+b;
+		a=b;
+		b=c;
+	}
+	getch ();
+}
+
