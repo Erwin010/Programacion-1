@@ -1,0 +1,33 @@
+// 589456156.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+float potencia(int base, int exponente);
+
+using namespace std;
+
+int main()
+{int n,x,i,y;
+	cout<<"Ingrese la cantidad de la serie: ";
+	cin>>n;
+	i=1;
+	x=potencia(10,n-1);
+	y=potencia(10,n)-1;
+	cout<<"Menor= ;"<<x<<" ";
+	cout<<"Mayor= ;"<<y<<" ";
+	i=i+1;
+	cout<<""<<endl;
+	getch();
+}
+
+float potencia(int base, int exponente)
+{
+		float x;
+		x=1;
+		for (int i=1;i<=exponente;i++)
+			x=x*base;
+		return x;
+}
