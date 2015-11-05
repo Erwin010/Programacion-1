@@ -1,0 +1,61 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+
+float ftoc(int f);
+float ctof(int c);
+int ctok(int c);
+
+using namespace std;
+
+void main()
+{int opcion,f,c,k; float cel,fah,kel;
+do{ 
+	cout<<"MENU \t\n";
+    cout<<"==== \t\n";
+	cout<<"1.- Calculo de grados F a C \n";
+	cout<<"2.- Calculo de grados C a F \n";
+	cout<<"3.- Calculo de grados C a K \n";
+	      cout<<"0.- Salir\n";
+    cout<<"Elige una opcion\n";
+	cin>>opcion;
+	switch(opcion){
+	case 1: cout<<"Ingrese el valor de los grados F: ";
+            cin>>f;
+			cel=ftoc(f);
+			cout<<"En grados C es: "<<cel;break;
+	case 2: cout<<"Ingrese el valor de los grados C: ";
+            cin>>c;
+			fah=ctof(c);
+			cout<<"En grados F es: "<<fah;break;
+	case 3: cout<<"Ingrese los grados C que quiere convertir: ";
+		    cin>>c;
+			kel=ctok(c);
+			cout<<"En grados K es: "<<kel;break;
+	case 0: cout<<"Salir\n";break;
+	default: cout<<"Opcion invalida\n";
+	}
+	getch ();
+	system ("cls");
+}while (opcion!=0);
+getch ();
+}
+
+float ftoc(int f)
+{float c;
+	c=(f-32)/1.8;
+	return c;
+}
+
+float ctof(int c)
+{float f;
+	f=c*(9/5)+32;
+	return f;
+}
+
+int ctok(int c)
+{int k;
+	k=c+273;
+	return k;
+}
