@@ -1,0 +1,97 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+
+using namespace std;
+float promap(int n);
+float promre(int n);
+float notamay(int n);
+
+void main()
+{ int opcion,n,promaprob,promreprob,notamayor;
+do{
+	cout<<"MENU \t\n";
+    cout<<"==== \t\n";
+	cout<<"1.- Calcular promedio de aprobados \n";
+	cout<<"2.- Calcular promedio de reprobados \n";
+	cout<<"3.- Nota del mejor alumno \n";
+	      cout<<"0.- Salir\n";
+    cout<<"Elige una opcion\n";
+	cin>>opcion;
+	switch(opcion){
+	case 1:cout<<"Ingrese la cantidad de estudiantes: ";
+		cin>>n;
+		promaprob=promap(n);
+			cout<<"El promedio es: "<<promaprob;break;
+	case 2:cout<<"Ingrese la cantidad de estudiantes: ";
+		cin>>n;
+		promreprob=promre(n);
+			cout<<"El promedio es: "<<promreprob;break;
+	case 3:cout<<"Ingrese la cantidad de estudiantes: ";
+		cin>>n;
+		notamayor=notamay(n);
+			cout<<"La nota mayor es: "<<notamayor;break;
+	case 0: cout<<"Salir\n";break;
+	default: cout<<"Opcion invalida\n";
+	}
+	getch ();
+	system ("cls");
+}while (opcion!=0);
+getch ();
+}
+
+float promap(int n)
+{	int i, nota, s, p,c;
+	i=1;
+	c=0;
+	s=0;
+	while (i<=n)
+	{	
+		cout<<"Ingrese la nota de los estudiantes: ";
+		cin>>nota;
+		if (nota>=51)
+			{
+			s=s+nota;
+			c=c+1;
+			}
+		i=i+1;
+	}
+	p=s/c;
+	return p;
+}
+
+float promre(int n)
+{	int i, nota, s, p,c;
+	i=1;
+	c=0;
+	s=0;
+	while (i<=n)
+	{	
+		cout<<"Ingrese la nota de los estudiantes: ";
+		cin>>nota;
+		if (nota<51)
+			{
+			s=s+nota;
+			c=c+1;
+			}
+		i=i+1;
+	}
+	p=s/c;
+	return p;
+}
+
+float notamay(int n)
+{	int may, nota,i;
+	may=0;
+	i=1;
+	while (i<=n)
+	{	
+		cout<<"Ingrese la nota de los estudiantes: ";
+		cin>>nota;
+	if(nota>may)
+		may=nota;
+	i=i+1;
+	}
+	return may;
+}
