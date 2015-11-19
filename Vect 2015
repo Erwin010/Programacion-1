@@ -1,0 +1,67 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+void cagar (int vec[], int tam);
+void mostrar (int vec[], int tam);
+float promedio (int vec[], int tam);
+int contar (int vec[], int tam);
+
+using namespace std;
+
+void main()
+{int n, vector[100],cont; float prome;
+do {
+	cout<<"Ingrese el numero de elementos:";
+	cin>>n;
+}
+while ((n<=0)&&(n>100));
+cagar (vector,n);
+mostrar (vector,n);
+prome=promedio (vector,n);
+cont=contar(vector,n);
+cout<<"La suma de los pares es: "<<prome<<endl;
+cout<<"Tiene "<<cont<<" cantidad de pares."<<endl;
+	getch ();
+}
+
+void cagar (int vec[], int tam)
+{int i;
+	for (i=0;i<tam;i++)
+		{cout<<"Ingrese el valor del vec["<<i<<"]= ";
+		cin>>vec[i];}
+}
+
+void mostrar (int vec[], int tam)
+{int i;
+	for (i=0;i<tam;i++)
+	{	
+		if(vec[i]%2==0)
+		{
+		cout<<"vec["<<i<<"] =";
+		cout<<vec[i]<<endl;
+		}
+	}
+}
+
+float promedio (int vec[], int tam)
+{float suma=0; int i;
+	for(i=0;i<tam;i++)
+	{
+	if(vec[i]%2==0)
+	suma=suma+vec[i];
+	}
+return suma;
+}
+
+int contar (int vec[], int tam)
+{int c,i;
+c=0;
+for (i=0;i<tam;i++)
+	{	
+		if(vec[i]%2==0)
+		c=c+1;
+	}
+return c;
+}
