@@ -1,0 +1,61 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+void cargar (int vec[], int tam);
+void mostrar (int vec[], int tam);
+void insertar (int vec[], int tam, int x, int p);
+
+
+using namespace std;
+
+void main()
+{int n, vector[100], x, p;
+do {
+	cout<<"Ingrese el numero de elementos:";
+	cin>>n;
+}
+while ((n<=0)&&(n>100));
+cout<<"Ingrese el numero que quiere ingresar en el vector: ";
+cin>>x;
+cout<<"Ingrese la posicion: ";
+cin>>p;
+cargar (vector,n);
+insertar (vector,n,x,p);
+mostrar (vector,n);
+	getch ();
+}
+
+void cargar (int vec[], int tam)
+{int i;
+	for (i=0;i<tam;i++)
+		{cout<<"Ingrese el valor del vec["<<i<<"]= ";
+		cin>>vec[i];}
+}
+
+void mostrar (int vec[], int tam)
+{int i;
+	for (i=0;i<tam;i++)
+	{	cout<<"vec["<<i<<"]= ";
+		cout<<vec[i]<<endl;
+	}
+}
+
+void insertar (int vec[], int tam, int x, int p)
+{int k;
+if (p<0 || p>tam)
+	cout<<"Posicion no valida"<<endl;
+else
+	{
+		k=tam-1;
+		while (k>=p)
+		{
+			vec[k+1]=vec[k];
+			k=k-1;
+		}
+	vec[p]=x;
+	tam=tam+1;
+	}
+}
