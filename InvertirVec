@@ -1,0 +1,58 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+void cagar (int vec[], int tam);
+void mostrar (int vec[], int tam);
+void invercambiar (int a, int b);
+void invertirvec (int vec[], int tam);
+
+using namespace std;
+
+void main()
+{int n, vector[100]; float prome;
+do {
+	cout<<"Ingrese el numero de elementos:";
+	cin>>n;
+}
+while ((n<=0)&&(n>100));
+cagar (vector,n);
+invertirvec (vector,n);
+mostrar (vector,n);
+	getch ();
+}
+
+void cagar (int vec[], int tam)
+{int i;
+	for (i=0;i<tam;i++)
+		{cout<<"Ingrese el valor del vec["<<i<<"]= ";
+		cin>>vec[i];}
+}
+
+void mostrar (int vec[], int tam)
+{int i;
+	for (i=0;i<tam;i++)
+	{	cout<<"vec["<<i<<"]= ";
+		cout<<vec[i]<<endl;
+	}
+}
+
+void intercambiar (int &a, int &b)
+{int aux;
+	aux=a;
+	a=b;
+	b=aux;
+}
+
+void invertirvec (int vec[], int tam)
+{int i,j;
+	i=0;
+	j=tam-1;
+	while (i<j)
+	{
+		intercambiar(vec[i],vec[j]);
+		i=i+1;
+		j=j-1;
+	}
+}
